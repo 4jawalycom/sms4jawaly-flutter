@@ -1,0 +1,30 @@
+name: sms4jawaly_flutter
+description: A Flutter package for integrating with SMS4Jawaly services
+version: 1.0.0
+homepage: https://github.com/4jawalycom/sms4jawaly-flutter
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+repository: https://github.com/4jawalycom/sms4jawaly-flutter
+issue_tracker: https://github.com/4jawalycom/sms4jawaly-flutter/issues
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.jawaly.sms4jawaly_flutter
+        pluginClass: Sms4jawalyFlutterPlugin
+      ios:
+        pluginClass: Sms4jawalyFlutterPlugin
