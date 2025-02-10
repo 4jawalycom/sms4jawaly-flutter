@@ -1,3 +1,9 @@
+## 1.0.6
+
+* Add support for all platforms (Web, Windows, macOS, Linux)
+* Improve package description
+* Format code with dart format
+
 ## 1.0.5
 
 * Initial release of the SMS4Jawaly Flutter package
