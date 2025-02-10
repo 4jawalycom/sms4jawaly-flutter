@@ -69,8 +69,8 @@ class Gateway {
           throw data['error'];
         }
 
-        final responseData = data['items'];
-        for (final item in responseData['data']) {
+        final items = data['items'];
+        for (final item in items['data']) {
           final senderName = item['sender_name'];
           allSenders.add(senderName);
           if (item['is_default'] == 1) {
@@ -79,7 +79,7 @@ class Gateway {
         }
 
         page++;
-      } while (page <= responseData['last_page']);
+      } while (page <= items['last_page']);
 
       return {
         'success': true,
