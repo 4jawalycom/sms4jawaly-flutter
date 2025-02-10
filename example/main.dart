@@ -66,7 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
       return;
     }
 
-    final numbers = _numbersController.text.split(',').map((e) => e.trim()).toList();
+    final numbers =
+        _numbersController.text.split(',').map((e) => e.trim()).toList();
     final result = await _gateway.sendSms(
       message: _messageController.text,
       numbers: numbers,

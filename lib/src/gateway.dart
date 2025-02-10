@@ -59,9 +59,9 @@ class Gateway {
         final response = await _client.get(
           Uri.parse('$_apiBaseUrl/account/area/senders')
               .replace(queryParameters: {
-                'page': page.toString(),
-                'return_collection': '1',
-              }),
+            'page': page.toString(),
+            'return_collection': '1',
+          }),
           headers: _headers,
         );
 

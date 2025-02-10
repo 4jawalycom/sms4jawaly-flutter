@@ -1,5 +1,5 @@
 name: sms4jawaly_flutter
-description: A Flutter package for integrating with SMS4Jawaly services
+description: A comprehensive Flutter package for integrating SMS services through 4Jawaly API. Supports sending SMS messages, checking balance, and managing sender IDs across multiple platforms.
 version: 1.0.5
 
 environment:
@@ -28,3 +28,12 @@ flutter:
         pluginClass: Sms4jawalyFlutterPlugin
       ios:
         pluginClass: Sms4jawalyFlutterPlugin
+      web:
+        pluginClass: Sms4jawalyFlutterWeb
+        fileName: sms4jawaly_flutter_web.dart
+      windows:
+        pluginClass: Sms4jawalyFlutterWindows
+      macos:
+        pluginClass: Sms4jawalyFlutterMacOS
+      linux:
+        pluginClass: Sms4jawalyFlutterLinux
