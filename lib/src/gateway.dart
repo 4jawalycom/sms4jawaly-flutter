@@ -53,6 +53,7 @@ class Gateway {
       var page = 1;
       final allSenders = <String>[];
       final defaultSenders = <String>[];
+      Map<String, dynamic> items;
 
       do {
         final response = await _client.get(
@@ -69,7 +70,7 @@ class Gateway {
           throw data['error'];
         }
 
-        final items = data['items'];
+        items = data['items'];
         for (final item in items['data']) {
           final senderName = item['sender_name'];
           allSenders.add(senderName);
