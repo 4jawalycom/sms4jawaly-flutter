@@ -50,9 +50,9 @@ class Gateway {
   /// Get sender names
   Future<Map<String, dynamic>> getSenders() async {
     try {
+      var page = 1;
       final allSenders = <String>[];
       final defaultSenders = <String>[];
-      var page = 1;
 
       do {
         final response = await _client.get(
@@ -65,9 +65,12 @@ class Gateway {
         );
 
         final data = jsonDecode(response.body);
-        final items = data['items'];
+        if (!data['success']) {
+          throw data['error'];
+        }
 
-        for (final item in items['data']) {
+        final responseData = data['items'];
+        for (final item in responseData['data']) {
           final senderName = item['sender_name'];
           allSenders.add(senderName);
           if (item['is_default'] == 1) {
@@ -76,7 +79,7 @@ class Gateway {
         }
 
         page++;
-      } while (page <= items['last_page']);
+      } while (page <= responseData['last_page']);
 
       return {
         'success': true,
